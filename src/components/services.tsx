@@ -8,37 +8,26 @@ const poppins = Poppins({
 });
 
 export default function Services() {
-  const services = [
-    { name: "UI & UX", href: "/ui-ux" },
-    { name: "Illustration", href: "/illustration" },
-    { name: "Graphic Design", href: "/graphic-design" },
-    { name: "Product Design", href: "/product-design" },
-    { name: "Photography", href: "/photography" },
-    { name: "3D Animation", href: "/3d-animation" },
-    { name: "Social Media Design", href: "/social-media-design" },
-    { name: "Logo Design", href: "/logo-design" },
-  ];
-
   return (
     <section
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 sm:py-32 pb-32 sm:pb-48 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-6 py-32 pb-48 relative overflow-hidden"
       style={{ backgroundColor: "#660B05" }}
     >
       <div className="max-w-7xl w-full relative">
         {/* Title */}
         <h2
-          className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-12 sm:mb-16 text-white tracking-widest"
+          className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-16 text-white tracking-widest"
           style={{ fontFamily: "var(--font-shigokae)" }}
         >
           WILDA ALYKA FAHSA
         </h2>
 
-        {/* MOBILE LAYOUT - Stack Design */}
-        <div className="lg:hidden flex flex-col items-center gap-8">
-          {/* Profile Image */}
-          <div className="relative group mb-6">
-            <div className="bg-gradient-to-br from-[#F5E6D3] to-[#E8D4BD] p-3 sm:p-4 rounded-2xl shadow-2xl">
-              <div className="w-48 h-64 sm:w-56 sm:h-80 relative overflow-hidden rounded-xl shadow-lg">
+        {/* MOBILE LAYOUT - Hidden on desktop */}
+        <div className="block md:hidden">
+          {/* Center Image */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-gradient-to-br from-[#F5E6D3] to-[#E8D4BD] p-3 rounded-2xl shadow-2xl">
+              <div className="w-48 h-64 relative overflow-hidden rounded-xl shadow-lg">
                 <Image
                   src="/assets/pro.jpg"
                   alt="Wilda Alyka Fahsa"
@@ -50,112 +39,107 @@ export default function Services() {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full max-w-md">
-            {services.map((service, index) => (
-              <Link
-                key={index}
-                href={service.href}
-                className="group bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl border border-white/20"
-              >
-                <span
-                  className={`${poppins.className} text-white text-sm sm:text-base font-semibold text-center block transition-all duration-300 group-hover:scale-110`}
-                >
-                  {service.name}
-                </span>
-              </Link>
-            ))}
+          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+            <MobileServiceItem name="UI & UX" href="/ui-ux" font={poppins} />
+            <MobileServiceItem name="Product Design" href="/product-design" font={poppins} />
+            <MobileServiceItem name="Illustration" href="/illustration" font={poppins} />
+            <MobileServiceItem name="Photography" href="/photography" font={poppins} />
+            <MobileServiceItem name="Graphic Design" href="/graphic-design" font={poppins} />
+            <MobileServiceItem name="3D Animation" href="/3d-animation" font={poppins} />
+            <MobileServiceItem name="Social Media Design" href="/social-media-design" font={poppins} />
+            <MobileServiceItem name="Logo Design" href="/logo-design" font={poppins} />
           </div>
         </div>
 
-        {/* DESKTOP LAYOUT - Original Scattered Design */}
-        <div className="hidden lg:block relative min-h-[650px]">
-          {/* Center Modern Card Image */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group">
-            <div className="bg-gradient-to-br from-[#F5E6D3] to-[#E8D4BD] p-4 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:-rotate-1">
-              <div className="w-64 h-96 xl:w-72 xl:h-[420px] relative overflow-hidden rounded-xl shadow-lg">
-                <Image
-                  src="/assets/pro.jpg"
-                  alt="Wilda Alyka Fahsa"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+        {/* DESKTOP LAYOUT - Hidden on mobile - EXACT COPY FROM ORIGINAL */}
+        <div className="hidden md:block">
+          {/* Main Container */}
+          <div className="relative flex items-center justify-center min-h-[650px]">
+            {/* Center Modern Card Image - More Gen Z */}
+            <div className="relative z-10 group">
+              <div className="bg-gradient-to-br from-[#F5E6D3] to-[#E8D4BD] p-4 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:-rotate-1">
+                <div className="w-64 h-96 lg:w-72 lg:h-[420px] relative overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src="/assets/pro.jpg"
+                    alt="Wilda Alyka Fahsa"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+              </div>
+            </div>
+            {/* Left Side Services - More Gen Z Scattered */}
+            <div className="absolute left-6 lg:left-12 xl:left-20">
+              <div className="relative" style={{ top: "-70px", left: "5px" }}>
+                <ServiceItem
+                  name="UI & UX"
+                  side="left"
+                  font={poppins}
+                  href="/ui-ux"
+                />
+              </div>
+              <div className="relative" style={{ top: "30px", left: "-10px" }}>
+                <ServiceItem
+                  name="Illustration"
+                  side="left"
+                  font={poppins}
+                  href="/illustration"
+                />
+              </div>
+              <div className="relative" style={{ top: "160px", left: "15px" }}>
+                <ServiceItem
+                  name="Graphic Design"
+                  side="left"
+                  font={poppins}
+                  href="/graphic-design"
                 />
               </div>
             </div>
-          </div>
-
-          {/* Left Side Services */}
-          <div className="absolute left-12 xl:left-20">
-            <div className="relative" style={{ top: "-70px", left: "5px" }}>
-              <ServiceItem
-                name="UI & UX"
-                side="left"
-                font={poppins}
-                href="/ui-ux"
-              />
+            {/* Right Side Services - More Gen Z Scattered */}
+            <div className="absolute right-6 lg:right-12 xl:right-20">
+              <div className="relative" style={{ top: "-35px", left: "-5px" }}>
+                <ServiceItem
+                  name="Product Design"
+                  side="right"
+                  font={poppins}
+                  href="/product-design"
+                />
+              </div>
+              <div className="relative" style={{ top: "75px", left: "10px" }}>
+                <ServiceItem
+                  name="Photography"
+                  side="right"
+                  font={poppins}
+                  href="/photography"
+                />
+              </div>
+              <div className="relative" style={{ top: "155px", left: "-15px" }}>
+                <ServiceItem
+                  name="3D Animation"
+                  side="right"
+                  font={poppins}
+                  href="/3d-animation"
+                />
+              </div>
             </div>
-            <div className="relative" style={{ top: "30px", left: "-10px" }}>
-              <ServiceItem
-                name="Illustration"
-                side="left"
-                font={poppins}
-                href="/illustration"
-              />
-            </div>
-            <div className="relative" style={{ top: "160px", left: "15px" }}>
-              <ServiceItem
-                name="Graphic Design"
-                side="left"
-                font={poppins}
-                href="/graphic-design"
-              />
-            </div>
-          </div>
-
-          {/* Right Side Services */}
-          <div className="absolute right-12 xl:right-20">
-            <div className="relative" style={{ top: "-35px", left: "-5px" }}>
-              <ServiceItem
-                name="Product Design"
-                side="right"
-                font={poppins}
-                href="/product-design"
-              />
-            </div>
-            <div className="relative" style={{ top: "75px", left: "10px" }}>
-              <ServiceItem
-                name="Photography"
-                side="right"
-                font={poppins}
-                href="/photography"
-              />
-            </div>
-            <div className="relative" style={{ top: "155px", left: "-15px" }}>
-              <ServiceItem
-                name="3D Animation"
-                side="right"
-                font={poppins}
-                href="/3d-animation"
-              />
-            </div>
-          </div>
-
-          {/* Bottom Services */}
-          <div className="absolute bottom-0 xl:-bottom-8 left-1/2 -translate-x-1/2 flex gap-48 xl:gap-64">
-            <div style={{ position: "relative", left: "-15px", top: "10px" }}>
-              <ServiceItem
-                name="Social Media Design"
-                side="bottom-left"
-                font={poppins}
-                href="/social-media-design"
-              />
-            </div>
-            <div style={{ position: "relative", left: "15px", top: "10px" }}>
-              <ServiceItem
-                name="Logo Design"
-                side="bottom-right"
-                font={poppins}
-                href="/logo-design"
-              />
+            {/* Bottom Services - Diagonal Style (Serong!) */}
+            <div className="absolute bottom-0 md:-bottom-8 left-1/2 -translate-x-1/2 flex gap-32 md:gap-48 lg:gap-64">
+              <div style={{ position: "relative", left: "-15px", top: "10px" }}>
+                <ServiceItem
+                  name="Social Media Design"
+                  side="bottom-left"
+                  font={poppins}
+                  href="/social-media-design"
+                />
+              </div>
+              <div style={{ position: "relative", left: "15px", top: "10px" }}>
+                <ServiceItem
+                  name="Logo Design"
+                  side="bottom-right"
+                  font={poppins}
+                  href="/logo-design"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -164,6 +148,30 @@ export default function Services() {
   );
 }
 
+// Component untuk mobile - simple card style
+function MobileServiceItem({
+  name,
+  href,
+  font,
+}: {
+  name: string;
+  href: string;
+  font: any;
+}) {
+  return (
+    <Link href={href} className="group">
+      <div className="bg-white/10 hover:bg-white/20 backdrop-blur-sm p-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg border border-white/20">
+        <span
+          className={`${font.className} text-white text-sm font-semibold text-center block leading-tight`}
+        >
+          {name}
+        </span>
+      </div>
+    </Link>
+  );
+}
+
+// Component untuk desktop - EXACT COPY FROM ORIGINAL
 function ServiceItem({
   name,
   side,
@@ -181,7 +189,7 @@ function ServiceItem({
         {side === "left" && (
           <>
             <span
-              className={`${font.className} text-white/50 text-base lg:text-xl font-semibold whitespace-nowrap transition-all duration-300 group-hover:text-white group-hover:translate-x-2 group-hover:scale-110`}
+              className={`${font.className} text-white/50 text-sm md:text-base lg:text-xl font-semibold whitespace-nowrap transition-all duration-300 group-hover:text-white group-hover:translate-x-2 group-hover:scale-110`}
             >
               {name}
             </span>
@@ -209,7 +217,6 @@ function ServiceItem({
             </svg>
           </>
         )}
-
         {side === "right" && (
           <>
             <svg
@@ -235,13 +242,12 @@ function ServiceItem({
               />
             </svg>
             <span
-              className={`${font.className} text-white/50 text-base lg:text-xl font-semibold whitespace-nowrap transition-all duration-300 group-hover:text-white group-hover:-translate-x-2 group-hover:scale-110`}
+              className={`${font.className} text-white/50 text-sm md:text-base lg:text-xl font-semibold whitespace-nowrap transition-all duration-300 group-hover:text-white group-hover:-translate-x-2 group-hover:scale-110`}
             >
               {name}
             </span>
           </>
         )}
-
         {side === "bottom-left" && (
           <div className="flex flex-col items-center gap-1">
             <svg
@@ -267,13 +273,12 @@ function ServiceItem({
               />
             </svg>
             <span
-              className={`${font.className} text-white/50 text-base lg:text-xl font-semibold text-center transition-all duration-300 group-hover:text-white group-hover:translate-y-2 group-hover:scale-110 max-w-[140px] leading-tight`}
+              className={`${font.className} text-white/50 text-sm md:text-base lg:text-xl font-semibold text-center transition-all duration-300 group-hover:text-white group-hover:translate-y-2 group-hover:scale-110 max-w-[140px] leading-tight`}
             >
               {name}
             </span>
           </div>
         )}
-
         {side === "bottom-right" && (
           <div className="flex flex-col items-center gap-1">
             <svg
@@ -299,7 +304,7 @@ function ServiceItem({
               />
             </svg>
             <span
-              className={`${font.className} text-white/50 text-base lg:text-xl font-semibold text-center transition-all duration-300 group-hover:text-white group-hover:translate-y-2 group-hover:scale-110 max-w-[140px] leading-tight`}
+              className={`${font.className} text-white/50 text-sm md:text-base lg:text-xl font-semibold text-center transition-all duration-300 group-hover:text-white group_hover:translate-y-2 group-hover:scale-110 max-w-[140px] leading-tight`}
             >
               {name}
             </span>

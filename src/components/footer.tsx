@@ -40,7 +40,7 @@ export default function Footer() {
                   height={32}
                   className="object-contain"
                 />
-                <span className="text-gray-700 text-sm md:text-base group-hover:text-gray-900">@wildaalyka</span>
+                <span className="text-gray-700 text-sm md:text-base group-hover:text-gray-900">@wildalyka</span>
               </Link>
 
               {/* Twitter/X */}
