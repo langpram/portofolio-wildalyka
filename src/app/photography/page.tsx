@@ -69,7 +69,7 @@ export default function PhotographyPortfolio() {
                     <img
                       src={item.image}
                       alt={`Photography ${item.id}`}
-                      className="w-full h-auto object-cover max-h-[400px] md:max-h-none md:object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-95"
+                      className="w-full h-auto object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-95"
                     />
                   </div>
                 </div>
@@ -91,7 +91,7 @@ export default function PhotographyPortfolio() {
                     <img
                       src={item.image}
                       alt={`Photography ${item.id}`}
-                      className="w-full h-auto object-cover max-h-[400px] md:max-h-none md:object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+                      className="w-full h-auto object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                     />
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function PhotographyPortfolio() {
                       <img
                         src={item.image}
                         alt={`Photography ${item.id}`}
-                        className="w-full h-auto object-cover max-h-[400px] md:max-h-none md:object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-95"
+                        className="w-full h-auto object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-95"
                       />
                     </div>
                   </div>
